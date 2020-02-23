@@ -8,6 +8,7 @@ https://activemq.apache.org/getting-started#WindowsBinaryInstallation
 https://activemq.apache.org/hello-world
 Naming example http://dummy.restapiexample.com/
 examples on get post put delete https://spring.io/guides/tutorials/rest/
+versioning https://www.springboottutorial.com/spring-boot-versioning-for-rest-services
 # Text
 
 POST should be used to create new resources when:
@@ -37,6 +38,17 @@ PUT should be used to update existing resources with well-known URL. It can be u
 # TODO
 
 - add versioning
+
+The list below shows Major API providers using different versioning approaches.
+
+Media type versioning (a.k.a “content negotiation” or “accept header”)
+GitHub
+(Custom) Headers versioning
+Microsoft
+URI Versioning
+Twitter
+Request Parameter versioning
+Amazon
+
 - put message on the queue
 - add swagger doc?
-- possibly add logic to refuse in without out and out without in but in this case we need a persistence layer to the db
