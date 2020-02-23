@@ -3,7 +3,11 @@ https://www.java4s.com/spring-boot-tutorials/spring-boot-restful-web-service-wit
 https://spring.io/guides/tutorials/rest/
 https://www.baeldung.com/spring-handler-mappings
 https://www.baeldung.com/spring-new-requestmapping-shortcuts
-
+https://restfulapi.net/resource-naming/
+https://activemq.apache.org/getting-started#WindowsBinaryInstallation
+https://activemq.apache.org/hello-world
+Naming example http://dummy.restapiexample.com/
+examples on get post put delete https://spring.io/guides/tutorials/rest/
 # Text
 
 POST should be used to create new resources when:
@@ -30,3 +34,9 @@ PUT should be used to update existing resources with well-known URL. It can be u
                          </action>
 </CardCheck>
 
+# TODO
+
+- add versioning
+- put message on the queue
+- add swagger doc?
+- possibly add logic to refuse in without out and out without in but in this case we need a persistence layer to the db
