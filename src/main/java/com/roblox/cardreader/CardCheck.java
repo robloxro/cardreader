@@ -3,16 +3,16 @@ package com.roblox.cardreader;
 import java.util.Date;
 
 public class CardCheck {
-    private final long id;
+    private  long id;
 
     public long getData() {
         return data;
     }
 
-    private final long data;
-    private final long cardId;
-    private final String username;
-    private final String action;
+    private  long data;
+    private  long cardId;
+    private  String username;
+    private  String action;
 
 
     public long getId() {
@@ -31,6 +31,9 @@ public class CardCheck {
 
     public String getAction() {
         return action;
+    }
+
+    public CardCheck() {
     }
 
     public CardCheck(long id, long data, long cardId, String username, String action) {

@@ -1,11 +1,10 @@
-# cardreader
-# usefull urls
+# Useful urls
 https://www.java4s.com/spring-boot-tutorials/spring-boot-restful-web-service-with-post-request-in-xml-example/
 https://spring.io/guides/tutorials/rest/
 https://www.baeldung.com/spring-handler-mappings
 https://www.baeldung.com/spring-new-requestmapping-shortcuts
 
-#Text
+# Text
 
 POST should be used to create new resources when:
 - the new resource is subordinate to an existing resource - the resource identity/URL is not known at creation time
