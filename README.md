@@ -28,4 +28,4 @@ PUT should be used to update existing resources with well-known URL. It can be u
   IN
   </action>
 </cardCheck>
- https://www.lucidchart.com/documents/view/ba2e57b9-0c45-4f75-ab7d-e562d18dae4d/0_0
+
