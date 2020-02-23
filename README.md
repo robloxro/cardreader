@@ -12,19 +12,21 @@ POST should be used to create new resources when:
 PUT should be used to update existing resources with well-known URL. It can be used to create a resource at well-known URL as well; however, it does help to think about this scenario in a different way - if the resource URL is known before the PUT request is made, this could be treated the same as the resource at this location already existing but being empty.
 
 # test data for postman
-<xml version="1.0" encoding="UTF-8"?>
-<cardCheck>
-  <data>
-  2009-01-01
-  </data>
-  <cardId>
-  12
-  </cardId>
-  <username>
-  Ruxij
-  </username>
-  <action>
-  IN
-  </action>
-</cardCheck>
+<CardCheck>
+                       	<id>
+                       		1
+                       	</id>
+                         <data>
+                         2009
+                         </data>
+                         <cardId>
+                         12
+                         </cardId>
+                         <username>
+                         Ruxij
+                         </username>
+                         <action>
+                         IN
+                         </action>
+</CardCheck>
 
