@@ -32,19 +32,28 @@
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
         </dependency>
+       <!-- <dependency>
+              <groupId>org.apache.activemq</groupId>
+              <artifactId>activemq-all</artifactId>
+              <version>5.15.11</version>
+          </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-test</artifactId>
+              <scope>test</scope>
+              <exclusions>
+                  <exclusion>
+                      <groupId>org.junit.vintage</groupId>
+                      <artifactId>junit-vintage-engine</artifactId>
+                  </exclusion>
+              </exclusions>
+          </dependency>
 
-        <!--<dependency>-->
+          <!--<dependency>-->
             <!--<groupId>com.fasterxml.jackson.dataformat</groupId>-->
             <!--<artifactId>jackson-dataformat-xml</artifactId>-->
         <!--</dependency>-->

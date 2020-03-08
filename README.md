@@ -10,6 +10,7 @@ Naming example http://dummy.restapiexample.com/
 examples on get post put delete https://spring.io/guides/tutorials/rest/
 versioning https://www.springboottutorial.com/spring-boot-versioning-for-rest-services
 https://springframework.guru/spring-framework-annotations/
+https://www.devglan.com/spring-boot/spring-boot-jms-activemq-example
 
 # Text
 
@@ -23,6 +24,15 @@ PUT should be used to update existing resources with well-known URL. It can be u
 
 C:\Users\ruxij\kits\kafka_2.12-2.4.0\bin\windows>zookeeper-server-start.bat .\..\..\config\zookeeper.properties
 kafka-server-start.bat .\..\..\config\server.properties
+#start activemq
+
+C:\Users\ruxij\kits\apache-activemq-5.15.11-bin\apache-activemq-5.15.11\bin\win64
+activemq.bat start
+console
+http://localhost:8161/admin/ 
+with 
+admin/admin
+netstat -an|find "61616"
 
 
 # test data for postman

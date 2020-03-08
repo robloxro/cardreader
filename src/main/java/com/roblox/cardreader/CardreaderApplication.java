@@ -13,9 +13,7 @@ public class CardreaderApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(CardreaderApplication.class, args
-
-        );
+        SpringApplication.run(CardreaderApplication.class, args);
     }
 
 
