@@ -11,12 +11,12 @@ import java.util.concurrent.atomic.AtomicLong;
 public class CheckinController {
     private final AtomicLong counter = new AtomicLong();
 
-    @GetMapping(path="/")
+    @GetMapping(path={"/v1.0","/"})
     //long id, Date data, long cardId, String username, String action
     public CardCheck cardCheck(@RequestParam(value = "cardId", defaultValue = "0") long cardId) {
         return new CardCheck(counter.incrementAndGet(), cardId, new Date().getTime(), "User", "IN");
     }
-    @PostMapping(path="/", consumes = "application/xml;charset=UTF-8")
+    @PostMapping(path={"/v1.0","/"}, consumes = "application/xml;charset=UTF-8")
     public String create(@RequestBody CardCheck cardCheck) {
 
        return "Posted card action is "+cardCheck.getUsername() +" checked card "+cardCheck.getId() +

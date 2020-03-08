@@ -9,6 +9,8 @@ https://activemq.apache.org/hello-world
 Naming example http://dummy.restapiexample.com/
 examples on get post put delete https://spring.io/guides/tutorials/rest/
 versioning https://www.springboottutorial.com/spring-boot-versioning-for-rest-services
+https://springframework.guru/spring-framework-annotations/
+
 # Text
 
 POST should be used to create new resources when:
@@ -34,6 +36,11 @@ PUT should be used to update existing resources with well-known URL. It can be u
                          IN
                          </action>
 </CardCheck>
+
+get:localhost:8080/cardCheck/v1.0
+get:localhost:8080/cardCheck/
+post:localhost:8080/cardCheck/v1.0
+post:localhost:8080/cardCheck/
 
 # TODO
 
