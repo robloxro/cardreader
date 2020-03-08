@@ -18,6 +18,13 @@ POST should be used to create new resources when:
 
 PUT should be used to update existing resources with well-known URL. It can be used to create a resource at well-known URL as well; however, it does help to think about this scenario in a different way - if the resource URL is known before the PUT request is made, this could be treated the same as the resource at this location already existing but being empty.
 
+# start kafka
+
+
+C:\Users\ruxij\kits\kafka_2.12-2.4.0\bin\windows>zookeeper-server-start.bat .\..\..\config\zookeeper.properties
+kafka-server-start.bat .\..\..\config\server.properties
+
+
 # test data for postman
 <CardCheck>
                        	<id>
@@ -42,20 +49,11 @@ get:localhost:8080/cardCheck/
 post:localhost:8080/cardCheck/v1.0
 post:localhost:8080/cardCheck/
 
-# TODO
+# Completed
 
-- add versioning
+- add versioning - done
 
-The list below shows Major API providers using different versioning approaches.
-
-Media type versioning (a.k.a “content negotiation” or “accept header”)
-GitHub
-(Custom) Headers versioning
-Microsoft
-URI Versioning
-Twitter
-Request Parameter versioning
-Amazon
+#TODO
 
 - put message on the queue
 - add swagger doc?
