@@ -11,6 +11,7 @@ examples on get post put delete https://spring.io/guides/tutorials/rest/
 versioning https://www.springboottutorial.com/spring-boot-versioning-for-rest-services
 https://springframework.guru/spring-framework-annotations/
 https://www.devglan.com/spring-boot/spring-boot-jms-activemq-example
+https://dzone.com/articles/kafka-producer-and-consumer-example
 
 # Text
 
@@ -24,6 +25,17 @@ PUT should be used to update existing resources with well-known URL. It can be u
 
 C:\Users\ruxij\kits\kafka_2.12-2.4.0\bin\windows>zookeeper-server-start.bat .\..\..\config\zookeeper.properties
 kafka-server-start.bat .\..\..\config\server.properties
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic cardTopic
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+#issues to solve if using kafka on windows
+
+Change:
+#listeners=PLAINTEXT://:9092`
+in server.properties to:
+listeners=PLAINTEXT://localhost:9092
+
+
 #start activemq
 
 C:\Users\ruxij\kits\apache-activemq-5.15.11-bin\apache-activemq-5.15.11\bin\win64
