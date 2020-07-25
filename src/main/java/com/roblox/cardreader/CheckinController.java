@@ -1,6 +1,11 @@
 package com.roblox.cardreader;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
@@ -11,6 +16,9 @@ import javax.jms.Destination;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import java.util.Properties;
+import java.time.Instant;
+
 @RestController
 @RequestMapping(path = "/cardCheck")
 public class CheckinController {
@@ -30,6 +38,25 @@ public class CheckinController {
                 " at " + cardCheck.getData() + " as " + cardCheck.getAction() + " action";
         // should act as the producer of messages
         //we will have two consumers - email generator and dataCollector
+        Properties properties = new Properties();
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
+        Producer<String, String> producer = new KafkaProducer<>(properties);
+
+        //prepare the record
+        String recordValue = "Posted card action is " + cardCheck.getUsername() + " checked card " + cardCheck.getId() +
+                " at " + cardCheck.getData() + " as " + cardCheck.getAction() + " action";
+        System.out.println("Sending message: " + recordValue);
+        ProducerRecord<String, String> record = new ProducerRecord<>("cardTopic", null, recordValue);
+
+        //produce the record
+        producer.send(record);
+        producer.flush();
+
+        //close the producer at the end
+        producer.close();
         return text;
     }
         @PostMapping(path={"/v2.0"}, consumes = "application/xml;charset=UTF-8")

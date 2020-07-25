@@ -22,11 +22,13 @@ PUT should be used to update existing resources with well-known URL. It can be u
 
 # start kafka
 
+KAFKA_HOME=C:\kafka\bin\windows
+zookeeper-server-start.bat %KAFKA_HOME%\.\..\..\config\zookeeper.properties
+kafka-server-start.bat %KAFKA_HOME%\.\..\..\config\server.properties
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic cardTopic
+kafka-topics.bat --list --bootstrap-server localhost:9092
 
-C:\Users\ruxij\kits\kafka_2.12-2.4.0\bin\windows>zookeeper-server-start.bat .\..\..\config\zookeeper.properties
-kafka-server-start.bat .\..\..\config\server.properties
-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic cardTopic
-bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic cardTopic --from-beginning
 
 #issues to solve if using kafka on windows
 
