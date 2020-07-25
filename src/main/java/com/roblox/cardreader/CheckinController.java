@@ -21,8 +21,20 @@ public class CheckinController {
     public CardCheck cardCheck(@RequestParam(value = "cardId", defaultValue = "0") long cardId) {
         return new CardCheck(counter.incrementAndGet(), cardId, new Date().getTime(), "User", "IN");
     }
+
     @PostMapping(path={"/v1.0","/"}, consumes = "application/xml;charset=UTF-8")
+    //this is the activeMq option- will not evolve this code
     public String create(@RequestBody CardCheck cardCheck) {
+
+        String text = "Posted card action is " + cardCheck.getUsername() + " checked card " + cardCheck.getId() +
+                " at " + cardCheck.getData() + " as " + cardCheck.getAction() + " action";
+        // should act as the producer of messages
+        //we will have two consumers - email generator and dataCollector
+        return text;
+    }
+        @PostMapping(path={"/v2.0"}, consumes = "application/xml;charset=UTF-8")
+    //this is the activeMq option- will not evolve this code
+    public String createForActiveMQ(@RequestBody CardCheck cardCheck) {
 
         String text = "Posted card action is " + cardCheck.getUsername() + " checked card " + cardCheck.getId() +
                 " at " + cardCheck.getData() + " as " + cardCheck.getAction() + " action";
